@@ -1,4 +1,4 @@
-# NixOS — Hyprland (illogical-impulse) + NVIDIA + Mullvad + firewall
+# NixOS — Hyprland (illogical-impulse) + NVIDIA + Mullvad
 
 A flake-based NixOS configuration that gives you:
 
@@ -6,7 +6,6 @@ A flake-based NixOS configuration that gives you:
   (end-4's *Illogical Impulse* dotfiles + QuickShell), wired in through home-manager
 - **NVIDIA** proprietary driver with Wayland/KMS support
 - **Mullvad VPN** (daemon + GUI)
-- A **full-fledged nftables firewall**
 
 ## Layout
 
@@ -20,7 +19,6 @@ nixos-config/
     ├── nvidia.nix
     ├── hyprland.nix
     ├── mullvad.nix
-    └── firewall.nix
 ```
 
 ## Before you build
@@ -83,9 +81,6 @@ two extra flags above aren't needed.
 
 ## Notes
 
-- **Firewall + Mullvad**: Mullvad runs its own nftables kill-switch from its
-  daemon; it coexists with the NixOS firewall here. `checkReversePath` is set to
-  `"loose"` so VPN return traffic isn't dropped.
 - **SSH is disabled by default.** To enable it, uncomment the `services.openssh`
   block *and* the SSH rate-limit rule in `modules/firewall.nix`.
 - **UWSM**: Hyprland launches via UWSM. Do not also enable home-manager's
