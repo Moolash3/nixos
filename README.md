@@ -30,7 +30,7 @@ nixos-config/
    ```
 2. **Generate real hardware config** on the target machine and replace the stub:
    ```bash
-   sudo nixos-generate-config --dir .
+   nixos-generate-config --dir .
    ```
    (The included `hardware-configuration.nix` is a non-bootable placeholder.)
 3. **Check the NVIDIA driver type** in `modules/nvidia.nix`:

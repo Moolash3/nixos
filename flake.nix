@@ -1,5 +1,5 @@
 {
-  description = "NixOS: Hyprland (illogical-impulse) + NVIDIA + Mullvad + firewall";
+  description = "NixOS: Hyprland (illogical-impulse) + NVIDIA + Mullvad";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -11,7 +11,7 @@
 
     # end-4's "Illogical Impulse" Hyprland dotfiles, packaged as a home-manager module.
     illogical-flake = {
-      url = "github:soymou/illogical-flake";
+      url = "github:Moolash3/illogical-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -15,8 +15,6 @@
     # All of these are on by default; shown so you can flip any off.
     dotfiles = {
       fish.enable = true;      # fish shell config
-      kitty.enable = true;     # kitty terminal config
-      starship.enable = true;  # starship prompt
     };
   };
 
@@ -27,10 +25,8 @@
 
   # Add your own user packages here.
   home.packages = with pkgs; [
-    # firefox
-    # vscode
+    firefox
   ];
 
-  # Keep at your install-time value.
   home.stateVersion = "25.05";
 }
