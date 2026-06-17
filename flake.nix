@@ -26,7 +26,7 @@
       system = "x86_64-linux";
 
       # CHANGE THESE TWO to match your machine.
-      username = "youruser";
+      username = "enfer";
       hostname = "nixos";
     in
     {

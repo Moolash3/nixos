@@ -6,10 +6,10 @@
     ./modules/nvidia.nix
     ./modules/hyprland.nix
     ./modules/mullvad.nix
-    ./modules/firewall.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nix.settings.trusted-users = ["root" "@wheel"];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -24,7 +24,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "audio" "docker"];
     shell = pkgs.fish;
   };
   programs.fish.enable = true;
@@ -41,6 +41,14 @@
     pulse.enable = true;
   };
 
+  services.clamav = {
+    daemon.enable = true;
+    updater.enable = true;
+  };
+
+  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-curses;
+
   # ---- Services required by illogical-impulse / QuickShell -----------------
   services.geoclue2.enable = true;   # QtPositioning (weather, etc.)
   services.upower.enable = true;     # battery widgets
@@ -56,6 +64,20 @@
     vim
     wget
     alacritty
+    firefox
+    tmux
+    neovim
+    docker
+    vesktop
+    mise
+    pinentry-curses
+    gnupg
+    clamav
+    tree-sitter
+    clang
+    nodejs
+    pnpm
+    yarn
   ];
 
   # Hint Electron/Chromium apps to run natively on Wayland.

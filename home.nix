@@ -18,6 +18,16 @@
     };
   };
 
+  programs.git = {
+    enable = true;
+    signing = {
+      signByDefault = true;
+      key = null;
+    };
+  };
+
+  programs.gpg.enable = true;
+
   # IMPORTANT: when using UWSM (set in modules/hyprland.nix) you must NOT also let
   # home-manager start a Hyprland systemd session, or the two will fight. The
   # illogical-impulse module doesn't enable that integration, so there's nothing
@@ -26,6 +36,15 @@
   # Add your own user packages here.
   home.packages = with pkgs; [
     firefox
+    tmux
+    neovim
+    docker
+    vesktop
+    mise
+    pinentry-curses
+    gnupg
+    tree-sitter
+    clang
   ];
 
   home.stateVersion = "25.05";
