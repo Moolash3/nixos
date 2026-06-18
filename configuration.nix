@@ -49,6 +49,14 @@
   programs.gnupg.agent.enable = true;
   programs.gnupg.agent.pinentryPackage = pkgs.pinentry-curses;
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc.lib
+    zlib
+  ];
+
+  virtualisation.docker.enable = true;
+
   # ---- Services required by illogical-impulse / QuickShell -----------------
   services.geoclue2.enable = true;   # QtPositioning (weather, etc.)
   services.upower.enable = true;     # battery widgets
@@ -68,6 +76,7 @@
     tmux
     neovim
     docker
+    discord
     vesktop
     mise
     pinentry-curses
@@ -78,6 +87,16 @@
     nodejs
     pnpm
     yarn
+    gcc
+    ncurses
+    autoconf
+    automake
+    openssl
+    gnumake
+    erlang
+    elixir
+    postman
+    dbeaver-bin
   ];
 
   # Hint Electron/Chromium apps to run natively on Wayland.

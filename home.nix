@@ -39,7 +39,6 @@
     tmux
     neovim
     docker
-    vesktop
     mise
     pinentry-curses
     gnupg
