@@ -18,6 +18,18 @@
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
 
+  networking.hosts = {
+    "127.0.0.1" = [
+      "tiltifydev.com"
+      "api.tiltifydev.com"
+      "v5api.tiltifydev.com"
+      "id.tiltifydev.com"
+      "app.tilitfydev.com"
+      "start.tiltifydev.com"
+      "donate.tiltifydev.com"
+      ];
+  };
+
   time.timeZone = "America/Los_Angeles";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -56,6 +68,10 @@
   ];
 
   virtualisation.docker.enable = true;
+
+  networking.interfaces.enp7s0.ipv4.routes = [
+    { address = "192.168.1.0"; prefixLength = 24; via = "192.168.5.1"; }
+  ];
 
   # ---- Services required by illogical-impulse / QuickShell -----------------
   services.geoclue2.enable = true;   # QtPositioning (weather, etc.)
@@ -97,6 +113,7 @@
     elixir
     postman
     dbeaver-bin
+    fnm
   ];
 
   # Hint Electron/Chromium apps to run natively on Wayland.
