@@ -67,6 +67,19 @@
     zlib
   ];
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;  # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports for Source Dedicated Server hosting
+  };
+
+  programs.gamemode.enable = true;
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   virtualisation.docker.enable = true;
 
   networking.interfaces.enp7s0.ipv4.routes = [
@@ -114,6 +127,7 @@
     postman
     dbeaver-bin
     fnm
+    twitch-cli
   ];
 
   # Hint Electron/Chromium apps to run natively on Wayland.
