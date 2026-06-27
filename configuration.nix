@@ -128,6 +128,9 @@
     dbeaver-bin
     fnm
     twitch-cli
+    btop
+    kdePackages.dolphin
+    kdePackages.qtsvg
   ];
 
   # Hint Electron/Chromium apps to run natively on Wayland.
