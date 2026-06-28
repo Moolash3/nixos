@@ -39,7 +39,6 @@
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "docker"];
     shell = pkgs.fish;
   };
-  programs.fish.enable = true;
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
@@ -58,6 +57,7 @@
     updater.enable = true;
   };
 
+  programs.fish.enable = true;
   programs.gnupg.agent.enable = true;
   programs.gnupg.agent.pinentryPackage = pkgs.pinentry-curses;
 

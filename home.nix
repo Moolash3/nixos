@@ -2,19 +2,14 @@
 
 {
   imports = [
-    # The home-manager module exported by soymou/illogical-flake.
     inputs.illogical-flake.homeManagerModules.default
   ];
-
-  # home.username / home.homeDirectory are set automatically because this is
-  # loaded through the home-manager NixOS module.
 
   programs.illogical-impulse = {
     enable = true;
 
-    # All of these are on by default; shown so you can flip any off.
     dotfiles = {
-      fish.enable = true;      # fish shell config
+      fish.enable = true;
     };
   };
 
@@ -33,7 +28,6 @@
   # illogical-impulse module doesn't enable that integration, so there's nothing
   # to disable here — just don't add `wayland.windowManager.hyprland.systemd.enable`.
 
-  # Add your own user packages here.
   home.packages = with pkgs; [
     firefox
     tmux

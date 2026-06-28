@@ -24,8 +24,6 @@
   outputs = { self, nixpkgs, home-manager, illogical-flake, determinate, ... }@inputs:
     let
       system = "x86_64-linux";
-
-      # CHANGE THESE TWO to match your machine.
       username = "enfer";
       hostname = "nixos";
     in
