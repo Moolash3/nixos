@@ -131,6 +131,10 @@
     btop
     kdePackages.dolphin
     kdePackages.qtsvg
+    azure-cli
+    k9s
+    kubectl
+    kubelogin
   ];
 
   # Hint Electron/Chromium apps to run natively on Wayland.
