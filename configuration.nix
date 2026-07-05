@@ -57,6 +57,13 @@
     updater.enable = true;
   };
 
+  services.openssh = {
+    enable = true;
+    # require public key authentication for better security
+    settings.PasswordAuthentication = false;
+    settings.KbdInteractiveAuthentication = false;
+  };
+
   programs.fish.enable = true;
   programs.gnupg.agent.enable = true;
   programs.gnupg.agent.pinentryPackage = pkgs.pinentry-curses;
@@ -79,6 +86,8 @@
     enable = true;
     defaultEditor = true;
   };
+
+  programs.ssh.startAgent = true;
 
   virtualisation.docker.enable = true;
 
@@ -135,6 +144,7 @@
     k9s
     kubectl
     kubelogin
+    unzip
   ];
 
   # Hint Electron/Chromium apps to run natively on Wayland.

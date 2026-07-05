@@ -82,7 +82,7 @@ two extra flags above aren't needed.
 ## Notes
 
 - **SSH is disabled by default.** To enable it, uncomment the `services.openssh`
-  block *and* the SSH rate-limit rule in `modules/firewall.nix`.
+  block.
 - **UWSM**: Hyprland launches via UWSM. Do not also enable home-manager's
   `wayland.windowManager.hyprland.systemd.enable` — it conflicts.
 - **Updating Determinate Nix**: the Nix daemon updates itself out-of-band
