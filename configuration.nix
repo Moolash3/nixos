@@ -145,6 +145,7 @@
     kubectl
     kubelogin
     unzip
+    vscode
   ];
 
   # Hint Electron/Chromium apps to run natively on Wayland.
