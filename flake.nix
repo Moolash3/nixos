@@ -15,6 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    helium-flake = {
+      url = "github:Moolash3/helium-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Determinate Nix. NOTE: deliberately NO `inputs.nixpkgs.follows = "nixpkgs"`
     # here — Determinate recommends against it because following nixpkgs causes
     # cache misses for artifacts that would otherwise come from FlakeHub Cache.

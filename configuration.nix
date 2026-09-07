@@ -98,6 +98,7 @@
   # ---- Services required by illogical-impulse / QuickShell -----------------
   services.geoclue2.enable = true;   # QtPositioning (weather, etc.)
   services.upower.enable = true;     # battery widgets
+  services.udisks2.enable = true;
 
   fonts.packages = with pkgs; [
     rubik
@@ -146,6 +147,10 @@
     kubelogin
     unzip
     vscode
+    inputs.helium-flake.packages.${system}.default
+    nemo
+    gparted
+    popsicle
   ];
 
   # Hint Electron/Chromium apps to run natively on Wayland.
