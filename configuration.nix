@@ -151,6 +151,14 @@
     nemo
     gparted
     popsicle
+    (plex-desktop.override {
+      extraEnv = {
+        QT_QPA_PLATFORM = "xcb";
+        QT_XCB_GL_INTEGRATION = "xcb_glx";
+      };
+    })
+    plex-htpc
+    novelwriter
   ];
 
   # Hint Electron/Chromium apps to run natively on Wayland.

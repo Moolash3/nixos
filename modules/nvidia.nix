@@ -38,19 +38,9 @@
 
   # Helpful for Wayland on NVIDIA. NVD_BACKEND=direct fixes some VA-API decode paths.
   environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "nvidia";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     NVD_BACKEND = "direct";
     # If you hit cursor flicker/glitches on Hyprland, uncomment:
     # WLR_NO_HARDWARE_CURSORS = "1";
   };
-
-  # --- Laptop with hybrid Intel/AMD + NVIDIA graphics? ----------------------
-  # Uncomment and fill in your bus IDs (find them with `lspci`).
-  # hardware.nvidia.prime = {
-  #   offload.enable = true;
-  #   offload.enableOffloadCmd = true;   # provides `nvidia-offload <cmd>`
-  #   intelBusId = "PCI:0:2:0";
-  #   nvidiaBusId = "PCI:1:0:0";
-  # };
 }
